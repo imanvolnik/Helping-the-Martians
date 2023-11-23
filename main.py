@@ -1,3 +1,5 @@
+import os
+
 while True:
     point_A = int(input("Box 1 kilometer (from 1 to 7): "))
     point_B = int(input("Box 2 kilometer (from 1 to 7): "))
@@ -20,5 +22,4 @@ while True:
         break 
     else:
         print("The total weight must be 713 kilograms")
-
 
