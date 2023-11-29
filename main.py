@@ -21,7 +21,7 @@ def check_cargo(box_locations, box_weights):
         guessed_locations = list(map(int, input("Enter guessed locations for all boxes, separated by spaces: ").split()))
         if sorted(guessed_locations) == sorted(box_locations) and sum(box_weights) == total_weight:
             os.system('cls')
-            print("Congratulations! You found all the cargo.")
+            print("Congratulations! You found all the cargo!!!")
             break
         else:
             print("No cargo found at the guessed locations. The boxes have moved.")
