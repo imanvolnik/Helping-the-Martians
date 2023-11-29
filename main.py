@@ -3,15 +3,15 @@ import random
 
 total_weight = 713
 
-def create_boxmarks():
-    while True:
-        boxmark1 = random.randint(1, 3) 
-        boxmark2 = random.randint(3, 5) 
-        boxmark3 = random.randint(5, 7)
-        if boxmark1 != boxmark2 and boxmark2 != boxmark3:
-            break
-    return [boxmark1, boxmark2, boxmark3]
-    
+boxmark1 = random.randint(1, 3) 
+boxmark2 = random.randint(3, 5) 
+boxmark3 = random.randint(5, 7)
+
+def move_boxes():
+    boxmark1 = random.randint(1, 3) 
+    boxmark2 = random.randint(3, 5) 
+    boxmark3 = random.randint(5, 7)
+    return boxmark1, boxmark2, boxmark3
 
 def get_box_weight():
     while True:
@@ -33,16 +33,18 @@ def check_cargo():
         kilometer2 = int(input("Kilometer mark 2: "))
         kilometer3 = int(input("Kilometer mark 3: "))
 
-        if kilometer1 == lst_boxmarks[0] and kilometer2 == lst_boxmarks[1] and kilometer3 == lst_boxmarks[2]:
+        if kilometer1 == boxmark1 and kilometer2 == boxmark2 and kilometer3 == boxmark3:
             print("Congratulations! You found all the cargo.")
             break
         else:
             print("No cargo found at the entered kilometer marks. Boxes have moved.")
+            lst_boxmarks = [move_boxes()]
 
-lst_boxmarks = create_boxmarks()
-print(lst_boxmarks)
+
+lst_boxmarks = [boxmark1, boxmark2, boxmark3]
 
 lst_boxweight = get_box_weight()            
 
 os.system("cls")
 
+check_cargo()
